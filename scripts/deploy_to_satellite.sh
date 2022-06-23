@@ -49,7 +49,7 @@ function getAPPUrlSatConfig() {
           APPURL=$(ibmcloud sat resource get --resource  "${resource_id}" --output json | jq -r '.resource.data' | jq -r '.status.ingress[0].host')
         fi
       if [ -z  "${APPURL}"  ] || [[  "${APPURL}" = "null"  ]]; then 
-        printLog "Waiting for Application URL, Sleping for 20 seconds ...."
+        printLog "Waiting for Host URL, Sleping for 20 seconds ...."
         sleep 20
       else
         break
@@ -104,9 +104,9 @@ SATELLITE_CONFIG_ID=$( ibmcloud sat config get --config "${APP_NAME}" --output j
 printLog "Please check details at https://cloud.ibm.com/satellite/configuration/${SATELLITE_CONFIG_ID}/overview"
 
 if [ -z  "${APPURL}"  ] || [[  "${APPURL}" = "null"  ]]; then 
-  printWarning "Unable to get Application URL....."
+  printWarning "Unable to get Host URL....."
 else
-  printLog "Deployed Application can be found at the URL  ${APPURL}"
+  printLog "Route to the host is  ${APPURL}"
 fi
 
 
