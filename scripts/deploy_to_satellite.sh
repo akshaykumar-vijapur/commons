@@ -27,7 +27,7 @@ function getAPPUrlSatConfig() {
       if grep -q "razee/watch-resource: lite" ${filename}; then
         break;
       else 
-       printWarning  "\n\nDid not find [razee/watch-resource: lite] label in your deployment file.  Unable to fetch the application url. Please visit https://cloud.ibm.com/docs/satellite?topic=satellite-satcon-manage&mhsrc=ibmsearch_a&mhq=razee%2Fwatch-resource%3A+lite#satconfig-enable-watchkeeper-specific \n\n"
+       printWarning  "\n\nDid not find [razee/watch-resource: lite] label in your deployment file.  Unable to fetch the host url. Please visit https://cloud.ibm.com/docs/satellite?topic=satellite-satcon-manage&mhsrc=ibmsearch_a&mhq=razee%2Fwatch-resource%3A+lite#satconfig-enable-watchkeeper-specific \n\n"
        return
       fi
     fi
